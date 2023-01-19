@@ -1,53 +1,88 @@
+from typing import Union
 
-from asyncio import Queue as _Queue
-from asyncio import QueueEmpty as Empty
-from typing import Dict
-
-
-class Queue(_Queue):
-    _queue: list = []
-
-    def clear(self):
-        self._queue.clear()
+from config import autoclean, chatstats, userstats
+from config import time_to_seconds
+from InnexiaMusic.misc import db
 
 
-queues: Dict[int, Queue] = {}
-
-
-async def put(chat_id: int, **kwargs) -> int:
-    if chat_id not in queues:
-        queues[chat_id] = Queue()
-    await queues[chat_id].put({**kwargs})
-    return queues[chat_id].qsize()
-
-
-def get(chat_id: int) -> Dict[str, str]:
-    if chat_id in queues:
-        try:
-            return queues[chat_id].get_nowait()
-        except Empty:
-            return {}
-    return {}
-
-
-def is_empty(chat_id: int) -> bool:
-    if chat_id in queues:
-        return queues[chat_id].empty()
-    return True
-
-
-def task_done(chat_id: int):
-    if chat_id in queues:
-        try:
-            queues[chat_id].task_done()
-        except ValueError:
-            pass
-
-
-def clear(chat_id: int):
-    if chat_id in queues:
-        if queues[chat_id].empty():
-            raise Empty
+async def put_queue(
+    chat_id,
+    original_chat_id,
+    file,
+    title,
+    duration,
+    user,
+    vidid,
+    user_id,
+    stream,
+    forceplay: Union[bool, str] = None,
+):
+    title = title.title()
+    try:
+        duration_in_seconds = time_to_seconds(duration) - 3
+    except:
+        duration_in_seconds = 0
+    put = {
+        "title": title,
+        "dur": duration,
+        "streamtype": stream,
+        "by": user,
+        "chat_id": original_chat_id,
+        "file": file,
+        "vidid": vidid,
+        "user_id": user_id,
+        "seconds": duration_in_seconds,
+        "played": 0,
+    }
+    if forceplay:
+        check = db.get(chat_id)
+        if check:
+            check.insert(0, put)
         else:
-            queues[chat_id].clear()
-    raise Empty
+            db[chat_id] = []
+            db[chat_id].append(put)
+    else:
+        db[chat_id].append(put)
+    autoclean.append(file)
+    vidid = "telegram" if vidid == "soundcloud" else vidid
+    to_append = {"vidid": vidid, "title": title}
+    if chat_id not in chatstats:
+        chatstats[chat_id] = []
+    chatstats[chat_id].append(to_append)
+    if user_id not in userstats:
+        userstats[user_id] = []
+    userstats[user_id].append(to_append)
+    return
+
+
+async def put_queue_index(
+    chat_id,
+    original_chat_id,
+    file,
+    title,
+    duration,
+    user,
+    vidid,
+    stream,
+    forceplay: Union[bool, str] = None,
+):
+    put = {
+        "title": title,
+        "dur": duration,
+        "streamtype": stream,
+        "by": user,
+        "chat_id": original_chat_id,
+        "file": file,
+        "vidid": vidid,
+        "seconds": 0,
+        "played": 0,
+    }
+    if forceplay:
+        check = db.get(chat_id)
+        if check:
+            check.insert(0, put)
+        else:
+            db[chat_id] = []
+            db[chat_id].append(put)
+    else:
+        db[chat_id].append(put)
