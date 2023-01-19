@@ -13,7 +13,7 @@ from config import BANNED_USERS, lyrical
 from strings import get_command
 from InnexiaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram,
                         YouTube, app)
-from InnexiaMusic.core.call import Music
+from callsmusic.pytgcalls import Music
 from InnexiaMusic.utils import seconds_to_min, time_to_seconds
 from InnexiaMusic.utils.channelplay import get_channeplayCB
 from InnexiaMusic.utils.database import is_video_allowed
@@ -210,7 +210,7 @@ async def play_commnd(
                 and not config.SPOTIFY_CLIENT_SECRET
             ):
                 return await mystic.edit_text(
-                    "ᴛʜɪs ʙᴏᴛ ᴄᴀɴ'ᴛ ᴩʟᴀʏ sᴩᴏᴛɪғʏ ᴛʀᴀᴄᴋs ᴀɴᴅ ᴩʟᴀʏʟɪsᴛs, ᴩʟᴇᴀsᴇ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴏᴡɴᴇʀ ᴀɴᴅ ᴀsᴋ ʜɪᴍ ᴛᴏ ᴀᴅᴅ sᴩᴏᴛɪғʏ ᴩʟᴀʏᴇʀ."
+                    "This bot cannot play spotify tracks and playlists. Please contact my owner and ask him to add spotify player"
                 )
             if "track" in url:
                 try:
@@ -331,11 +331,11 @@ async def play_commnd(
                 await Music.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(
-                    "ᴛʜᴇʀᴇ's ᴀɴ ᴇʀʀᴏʀ ɪɴ ᴛʜᴇ ʙᴏᴛ, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴛᴏ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ ᴀs sᴏᴏɴ ᴀs ᴩᴏssɪʙʟᴇ."
+                    "There's an error in the bot, Please  report it to support chat as soon as possible for for fixes"
                 )
                 return await app.send_message(
                     config.LOG_GROUP_ID,
-                    "ᴩʟᴇᴀsᴇ ᴛᴜʀɴ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴛᴏ sᴛʀᴇᴀᴍ ᴜʀʟ.",
+                    "Please Turn logger Voicechat on to stream Url.",
                 )
             except Exception as e:
                 return await mystic.edit_text(
@@ -581,10 +581,10 @@ async def play_music(client, CallbackQuery, _):
 @app.on_callback_query(
     filters.regex("AnonymousAdmin") & ~BANNED_USERS
 )
-async def Musicymous_check(client, CallbackQuery):
+async def Anonymous_check(client, CallbackQuery):
     try:
         await CallbackQuery.answer(
-            "ʏᴏᴜ'ʀᴇ ᴀɴ ᴀɴᴏɴʏᴍᴏᴜs ᴀᴅᴍɪɴ\n\nʀᴇᴠᴇʀᴛ ʙᴀᴄᴋ ᴛᴏ ᴜsᴇʀ ᴀᴄᴄᴏᴜɴᴛ ғᴏʀ ᴜsɪɴɢ ᴍᴇ.",
+            "You are an anonymous admin\n\nrevery back to user account for using me", 
             show_alert=True,
         )
     except:
