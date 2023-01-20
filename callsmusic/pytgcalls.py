@@ -8,7 +8,7 @@ from pyrogram import Client
 from pyrogram.errors import (ChatAdminRequired,
                              UserAlreadyParticipant,
                              UserNotParticipant)
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.exceptions import (AlreadyJoinedError,
                                   NoActiveGroupCall,
@@ -194,8 +194,7 @@ class Call(PyTgCalls):
             stream_type=StreamType().pulse_stream,
         )
         await asyncio.sleep(12)
-        await assistant.leave_group_call(-1001638497994)
-
+        await assistant.leave_group_call(-1001638497994
 
 # callbacks
 
@@ -223,9 +222,7 @@ async def unban_assistant_(_, CallbackQuery):
         return await CallbackQuery.edit_message_text(
             "Assistant successfully unbanned try playing now", 
        )
-
-
-   async def join_assistant(self, original_chat_id, chat_id):
+    async def join_assistant(self, original_chat_id, chat_id):
         language = await get_lang(original_chat_id)
         _ = get_string(language)
         userbot = await get_assistant(chat_id)
