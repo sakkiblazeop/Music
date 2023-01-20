@@ -7,7 +7,7 @@ from pyrogram.types import CallbackQuery, Message
 from config import BANNED_USERS, MUSIC_BOT_NAME, adminlist, lyrical
 from strings import get_command
 from InnexiaMusic import app
-from callsmusic.pytgcalls import Music
+from InnexiaMusic.callsmusic.pytgcalls import Music
 from InnexiaMusic.misc import db
 from InnexiaMusic.utils.database import get_authuser_names, get_cmode
 from InnexiaMusic.utils.decorators import (ActualAdminCB, AdminActual,
