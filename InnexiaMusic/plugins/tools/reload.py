@@ -61,7 +61,7 @@ async def restartbot(client, message: Message, _):
     await asyncio.sleep(1)
     try:
         db[message.chat.id] = []
-        await Yukki.stop_stream(message.chat.id)
+        await Music.stop_stream(message.chat.id)
     except:
         pass
     chat_id = await get_cmode(message.chat.id)
@@ -72,7 +72,7 @@ async def restartbot(client, message: Message, _):
             pass
         try:
             db[chat_id] = []
-            await Yukki.stop_stream(chat_id)
+            await Music.stop_stream(chat_id)
         except:
             pass
     return await mystic.edit_text(
