@@ -6,7 +6,7 @@ import config
 from config import BANNED_USERS
 from strings import get_command
 from InnexiaMusic import YouTube, app
-from InnexiaMusic.callsmusic.pytgcalls import Music
+from callsmusic.pytgcalls import Music
 from InnexiaMusic.misc import db
 from InnexiaMusic.utils.database import get_loop
 from InnexiaMusic.utils.decorators import AdminRightsCheck
