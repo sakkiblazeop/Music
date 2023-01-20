@@ -9,7 +9,8 @@
 </h3>
 
 - Get your [Necessary Variables](https://github.com/Team-Deadly/Music/blob/main/sample.env)
-``shell
+
+``
 sudo apt update && apt upgrade -y
 sudo apt install python3-pip ffmpeg -y
 sudo curl -sL https://deb.nodesource.com/setup_17.x | sudo bash -
