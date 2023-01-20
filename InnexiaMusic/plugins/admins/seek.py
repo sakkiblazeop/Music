@@ -5,7 +5,7 @@ from pyrogram.types import Message
 from config import BANNED_USERS
 from strings import get_command
 from InnexiaMusic import YouTube, app
-from callsmusic.pytgcalls import Music
+from InnexiaMusic.callsmusic.pytgcalls import Music
 from InnexiaMusic.misc import db
 from InnexiaMusic.utils import AdminRightsCheck, seconds_to_min
 
