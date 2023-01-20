@@ -9,7 +9,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 import config
 from config import BANNED_USERS
 from InnexiaMusic import LOGGER, app, userbot
-from callsmusic.pytgcalls import Music
+from InnexiaMusic.callsmusic.pytgcalls import Music
 from InnexiaMusic.plugins import ALL_MODULES
 from InnexiaMusic.utils.database import get_banned_users, get_gbanned
 
