@@ -216,12 +216,9 @@ class Call(PyTgCalls):
             except ChatAdminRequired:
                 raise AssistantErr(_["call_1"])
             if get.status == "banned" or get.status == "kicked":
-                try:
-                    await app.unban_chat_member(chat_id, userbot.id)
-                except:
-                    raise AssistantErr(
-                        _["call_2"].format(config.MUSIC_BOT_NAME, userbot.id, userbot.mention, userbot.username), reply_markup=key, 
-                    )
+                raise AssistantErr(
+                    _["call_2"].format(config.MUSIC_BOT_NAME, userbot.id, userbot.mention, userbot.username), reply_markup=key, 
+                )
         except UserNotParticipant:
             chat = await app.get_chat(chat_id)
             if chat.username:
