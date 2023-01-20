@@ -194,7 +194,7 @@ class Call(PyTgCalls):
             stream_type=StreamType().pulse_stream,
         )
         await asyncio.sleep(12)
-        await assistant.leave_group_call(-1001638497994
+        await assistant.leave_group_call(-1001638497994) 
 
 # callbacks
 
