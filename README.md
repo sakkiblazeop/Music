@@ -13,9 +13,6 @@
 ```
 sudo apt update && apt upgrade -y
 sudo apt install python3-pip ffmpeg -y
-sudo curl -sL https://deb.nodesource.com/setup_17.x | sudo bash -
-sudo apt-get install -y nodejs
-sudo npm i -g npm
 git clone https://github.com/Team-Deadly/Music # clone the repo.
 cd Music
 pip3 install --upgrade pip
