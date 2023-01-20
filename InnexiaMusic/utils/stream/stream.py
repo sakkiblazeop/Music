@@ -7,7 +7,7 @@ from pyrogram.types import InlineKeyboardMarkup
 
 import config
 from InnexiaMusic import Carbon, YouTube, app
-from callsmusic.pytgcalls import Music
+from InnexiaMusic.callsmusic.pytgcalls import Music
 from InnexiaMusic.misc import db
 from InnexiaMusic.utils.database import (add_active_chat,
                                        add_active_video_chat,
