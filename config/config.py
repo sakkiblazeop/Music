@@ -76,7 +76,7 @@ AUTO_SUGGESTION_TIME = int(
 )  # Remember to give value in Seconds
 
 # Set it True if you want to delete downloads after the music playout ends from your downloads folder
-AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", None)
+AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", "True")
 
 # Set it True if you want to bot to suggest about bot commands to random chats of your bots.
 AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", None)
@@ -91,7 +91,7 @@ YOUTUBE_DOWNLOAD_EDIT_SLEEP = int(getenv("YOUTUBE_EDIT_SLEEP", "3"))
 TELEGRAM_DOWNLOAD_EDIT_SLEEP = int(getenv("TELEGRAM_EDIT_SLEEP", "5"))
 
 # Your Github Repo.. Will be shown on /start Command
-GITHUB_REPO = getenv("GITHUB_REPO", None)
+GITHUB_REPO = getenv("GITHUB_REPO", "True")
 
 # Spotify Client.. Get it from https://developer.spotify.com/dashboard
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
@@ -144,7 +144,7 @@ STRING5 = getenv("STRING_SESSION5", None)
 BANNED_USERS = filters.user()
 YTDOWNLOADER = 1
 LOG = 2
-LOG_FILE_NAME = "Yukkilogs.txt"
+LOG_FILE_NAME = "logs.txt"
 adminlist = {}
 lyrical = {}
 chatstats = {}
@@ -159,62 +159,62 @@ START_IMG_URL = getenv("START_IMG_URL", None)
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "assets/Ping.jpeg",
+    "https://te.legra.ph/file/abfcbebb3d9d8efbb7762.jpg",
 )
 
 PLAYLIST_IMG_URL = getenv(
     "PLAYLIST_IMG_URL",
-    "assets/Playlist.jpeg",
+    "https://te.legra.ph/file/94c52d506967d0f84d3a6.jpg",
 )
 
 GLOBAL_IMG_URL = getenv(
     "GLOBAL_IMG_URL",
-    "assets/Global.jpeg",
+    "https://te.legra.ph/file/11b12962a20bbc9f4e007.jpg",
 )
 
 STATS_IMG_URL = getenv(
     "STATS_IMG_URL",
-    "assets/Stats.jpeg",
+    "https://te.legra.ph/file/c17c054dd44f911376a73.jpg",
 )
 
 TELEGRAM_AUDIO_URL = getenv(
     "TELEGRAM_AUDIO_URL",
-    "assets/Audio.jpeg",
+    "https://te.legra.ph/file/1fe6ea0b46335debc49e6.jpg",
 )
 
 TELEGRAM_VIDEO_URL = getenv(
     "TELEGRAM_VIDEO_URL",
-    "assets/Video.jpeg",
+    "https://te.legra.ph/file/1fe6ea0b46335debc49e6.jpg",
 )
 
 STREAM_IMG_URL = getenv(
     "STREAM_IMG_URL",
-    "assets/Stream.jpeg",
+    "https://te.legra.ph/file/51519d1e9de538d43b0dd.jpg",
 )
 
 SOUNCLOUD_IMG_URL = getenv(
     "SOUNCLOUD_IMG_URL",
-    "assets/Soundcloud.jpeg",
+    "https://te.legra.ph/file/cfc8d4e4b17daaf3a1bd1.jpg",
 )
 
 YOUTUBE_IMG_URL = getenv(
     "YOUTUBE_IMG_URL",
-    "assets/Youtube.jpeg",
+    "https://te.legra.ph/file/b20c9aa6e6970e71f830d.jpg",
 )
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
     "SPOTIFY_ARTIST_IMG_URL",
-    "assets/SpotifyArtist.jpeg",
+    "https://te.legra.ph/file/05ddcabc702b042ae60c2.jpg",
 )
 
 SPOTIFY_ALBUM_IMG_URL = getenv(
     "SPOTIFY_ALBUM_IMG_URL",
-    "assets/SpotifyAlbum.jpeg",
+    "https://te.legra.ph/file/41b0557acd3b5c290827b.jpg",
 )
 
 SPOTIFY_PLAYLIST_IMG_URL = getenv(
     "SPOTIFY_PLAYLIST_IMG_URL",
-    "assets/SpotifyPlaylist.jpeg",
+    "https://te.legra.ph/file/32d44c0f6347222cd9bfc.jpg",
 )
 
 
