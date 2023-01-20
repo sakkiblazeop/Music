@@ -10,7 +10,7 @@
 
 - Get your [Necessary Variables](https://github.com/Team-Deadly/Music/blob/main/sample.env)
 
-``
+```
 sudo apt update && apt upgrade -y
 sudo apt install python3-pip ffmpeg -y
 sudo curl -sL https://deb.nodesource.com/setup_17.x | sudo bash -
@@ -22,4 +22,4 @@ pip3 install --upgrade pip
 pip3 install -U -r requirements.txt
 bash setup # install requirements and fill all variable
 bash start # run the bot
-``
+```
