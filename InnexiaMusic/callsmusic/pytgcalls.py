@@ -199,21 +199,20 @@ class Call(PyTgCalls):
     async def join_assistant(self, original_chat_id, chat_id):
         language = await get_lang(original_chat_id)
         _ = get_string(language)
-        userbot = await get_assistant(chat_id)
-        as_id = userbot.id
-        key = InlineKeyboardMarkup(
+        userbot = await get_assistant(chat_id)               
+        try:
+            try:
+                get = await app.get_chat_member(chat_id, userbot.id) 
+                key = InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
                             text="• Unban Assistant •",
-                            callback_data=f"unban_assistant a|{as_id}",
+                            callback_data=f"unban_assistant a|{userbot.id}",
                         )
                     ],
                 ]
             )
-        try:
-            try:
-                get = await app.get_chat_member(chat_id, userbot.id)
             except ChatAdminRequired:
                 raise AssistantErr(_["call_1"])
             if get.status == "banned" or get.status == "kicked":
