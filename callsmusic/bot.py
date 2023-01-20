@@ -5,7 +5,7 @@ from pyrogram import Client
 
 import config
 
-from ..logging import LOGGER
+from InnexiaMusic.logging import LOGGER
 
 
 
