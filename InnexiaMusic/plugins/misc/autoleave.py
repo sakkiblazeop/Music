@@ -4,7 +4,7 @@ from datetime import datetime
 
 import config
 from InnexiaMusic import app
-from callsmusic.pytgcalls import Music, autoend
+from InnexiaMusic.callsmusic.pytgcalls import Music, autoend
 from InnexiaMusic.utils.database import (get_client, is_active_chat,
                                        is_autoend)
 
