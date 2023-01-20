@@ -53,5 +53,8 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
                 text="Source Code", url=config.UPSTREAM_REPO
             )
         ],
+        [
+            InlineKeyboardButton(text=_["ST_B_6"], callback_data="LG")
+        ], 
      ]
     return buttons
