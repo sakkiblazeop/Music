@@ -5,7 +5,7 @@
 </p>
 
 <h3 align="center">
-##    ─「 ᴅᴇᴘʟᴏʏ ᴏɴ ᴠᴘs  」─
+   ─「 ᴅᴇᴘʟᴏʏ ᴏɴ ᴠᴘs  」─
 </h3>
 
 - Get your [Necessary Variables](https://github.com/Team-Deadly/Music/blob/main/sample.env)
