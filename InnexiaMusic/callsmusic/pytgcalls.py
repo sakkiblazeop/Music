@@ -200,12 +200,13 @@ class Call(PyTgCalls):
         language = await get_lang(original_chat_id)
         _ = get_string(language)
         userbot = await get_assistant(chat_id)
+        as_id = userbot.id
         key = InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
                             text="• Unban Assistant •",
-                            callback_data=f"unban_assistant a|{userbot.id}",
+                            callback_data=f"unban_assistant a|{as_id}",
                         )
                     ],
                 ]
@@ -216,9 +217,14 @@ class Call(PyTgCalls):
             except ChatAdminRequired:
                 raise AssistantErr(_["call_1"])
             if get.status == "banned" or get.status == "kicked":
-                raise AssistantErr(
-                    _["call_2"].format(config.MUSIC_BOT_NAME, userbot.id, userbot.mention, userbot.username), reply_markup=key, 
-                )
+                try:
+                    await app.reply_text(                      
+                        _["call_2"].format(userbot.username, userbot.id), reply_markup=key,                
+                    )
+                except:
+                    raise AssistantErr(
+                        _["call_2"].format(userbot.username, userbot.id), 
+                    )                
         except UserNotParticipant:
             chat = await app.get_chat(chat_id)
             if chat.username:
