@@ -12,7 +12,7 @@ from config import (AUTO_DOWNLOADS_CLEAR, BANNED_USERS,
                     TELEGRAM_AUDIO_URL, TELEGRAM_VIDEO_URL,
                     MUSIC_BOT_NAME, adminlist)
 from InnexiaMusic import YouTube, app
-from InnexiaMusic.callsmusic.pytgcalls import Music
+from callsmusic.pytgcalls import Music
 from InnexiaMusic.misc import SUDOERS, db
 from InnexiaMusic.utils import bot_sys_stats
 from InnexiaMusic.utils.database import (
