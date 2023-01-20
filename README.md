@@ -20,3 +20,8 @@ pip3 install -U -r requirements.txt
 bash setup # install requirements and fill all variable
 bash start # run the bot
 ```
+
+<h3 align="center">
+
+─「 sᴜᴩᴩᴏʀᴛ 」─
+</h3>
