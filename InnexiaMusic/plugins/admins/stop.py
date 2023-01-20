@@ -4,10 +4,10 @@ from pyrogram.types import Message
 from config import BANNED_USERS
 from strings import get_command
 from InnexiaMusic import app
-from InnexiaMusic.callsmusic.pytgcalls import Music
-from AnonX.utils.database import set_loop
-from AnonX.utils.decorators import AdminRightsCheck
-from AnonX.utils.inline.play import close_keyboard
+from callsmusic.pytgcalls import Music
+from InnexiaMusic.utils.database import set_loop
+from InnexiaMusic.utils.decorators import AdminRightsCheck
+from InnexiaMusic.utils.inline.play import close_keyboard
 
 # Commands
 STOP_COMMAND = get_command("STOP_COMMAND")
