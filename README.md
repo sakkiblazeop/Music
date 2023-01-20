@@ -31,3 +31,13 @@ bash start # run the bot
 <h3 align="center">
 ─「 ᴄʀᴇᴅɪᴛs 」─
 </h3>
+
+[Pyrogram](https://github.com/pyrogram/pyrogram) 
+
+[Pytgcalls](https://github.com/pytgcalls/pytgcalls) 
+
+[CallsMusic](https://github.com/roj1512/callsmusic) 
+
+[YukkiMusicBot](https://github.com/Team-Yukki/yukkiMusicBot) 
+
+[Team-Deadly](https://t.me/TheDeadlyBots) 
