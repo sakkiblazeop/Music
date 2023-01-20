@@ -62,6 +62,31 @@ async def del_back_playlist(client, CallbackQuery, _):
         checker[chat_id] = {}
     checker[chat_id][CallbackQuery.message.message_id] = True
 
+@app.on_callback_query(filters.regex("unban_assistant"))
+async def unban_assistant_(_, CallbackQuery):
+    callback_data = CallbackQuery.data.strip()
+    callback_request = callback_data.split(None, 1)[1]
+    query, user_id = callback_request.split("|")
+    a = await app.get_chat_member(CallbackQuery.message.chat.id, BOT_ID)
+    if not a.can_restrict_members:
+        return await CallbackQuery.answer(
+            "I don't have permission to BAN/UNBAN user in this chat",
+            show_alert=True,
+        )
+    else:
+        try:
+            await app.unban_chat_member(
+                CallbackQuery.message.chat.id, user_id
+            )
+        except:
+            return await CallbackQuery.answer(
+                "Failed to unban assistant try manually",
+                show_alert=True,
+            )
+        return await CallbackQuery.edit_message_text(
+            "Assistant successfully unbanned try playing now", 
+       )
+
 
 @app.on_callback_query(filters.regex("ADMIN") & ~BANNED_USERS)
 @languageCB
