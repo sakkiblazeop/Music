@@ -4,7 +4,7 @@ import asyncio
 from datetime import datetime, timedelta
 from typing import Union
 
-from pyrogram import Client
+from pyrogram import Client, filters
 from pyrogram.errors import (ChatAdminRequired,
                              UserAlreadyParticipant,
                              UserNotParticipant)
@@ -35,7 +35,7 @@ from InnexiaMusic.utils.exceptions import AssistantErr
 from InnexiaMusic.utils.inline.play import (stream_markup,
                                           telegram_markup)
 from InnexiaMusic.utils.stream.autoclear import auto_clean
-from InnexiaMusic.core.thumbnails import gen_thumb
+from InnexiaMusic.utils.thumbnails import gen_thumb
 
 autoend = {}
 counter = {}
