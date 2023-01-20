@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from config import BANNED_USERS, MUSIC_BOT_NAME, PING_IMG_URL
 from strings import get_command
 from InnexiaMusic import app
-from callsmusic.pytgcalls import Music
+from InnexiaMusic.callsmusic.pytgcalls import Music
 from InnexiaMusic.utils.decorators.language import language
 from InnexiaMusic.misc import _boot_
 from InnexiaMusic.utils.formatters import get_readable_time
