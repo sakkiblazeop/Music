@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from config import BANNED_USERS
 from strings import get_command
 from InnexiaMusic import app
-from callsmusic.pytgcalls import Music
+from InnexiaMusic.callsmusic.pytgcalls import Music
 from InnexiaMusic.utils.database import set_loop
 from InnexiaMusic.utils.decorators import AdminRightsCheck
 from InnexiaMusic.utils.inline.play import close_keyboard
