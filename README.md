@@ -27,3 +27,7 @@ bash start # run the bot
 </h3>
 
 <a href="https://t.me/TheDeadlyBots"><img src="https://img.shields.io/badge/Join-Support-blue.svg?style=for-the-badge&logo=Telegram"></a> <a href="https://t.me/TheBotUpdates"><img src="https://img.shields.io/badge/Join-Channel-blue.svg?style=for-the-badge&logo=Telegram"></a>
+
+<h3 align="center">
+─「 ᴄʀᴇᴅɪᴛs 」─
+</h3>
