@@ -13,7 +13,7 @@ from config import BANNED_USERS, lyrical
 from strings import get_command
 from InnexiaMusic import (Apple, Resso, SoundCloud, Spotify, Telegram,
                         YouTube, app)
-from callsmusic.pytgcalls import Music
+from InnexiaMusic.callsmusic.pytgcalls import Music
 from InnexiaMusic.utils import seconds_to_min, time_to_seconds
 from InnexiaMusic.utils.channelplay import get_channeplayCB
 from InnexiaMusic.utils.database import is_video_allowed
