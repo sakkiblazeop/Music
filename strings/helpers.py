@@ -165,7 +165,7 @@ HELP_11 = """😅**<u>GET STARTED WITH BOT</u>**
 ✅<u>**Group Settings:**</u>
 
 /settings - Get a complete group's settings with inline buttons
-
+"""
 
 
 HELP_12 = """👤**<u>GBAN FUNCTION:</u>**
