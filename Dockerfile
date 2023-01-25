@@ -11,6 +11,6 @@ RUN apt-get install -y nodejs
 COPY . /app/
 WORKDIR /app/
 RUN pip3 install -r requirements.txt
-RUN chmod +x /app/start
-ENTRYPOINT ["./start"]
+RUN chmod +x /app/start.sh
+ENTRYPOINT ["./start.sh"]
 
