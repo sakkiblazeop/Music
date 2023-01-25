@@ -1,7 +1,7 @@
 FROM nikolaik/python-nodejs:python3.9-nodejs18
-RUN apt-get update -y && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
+RUN sudo apt update -y && sudo apt upgrade -y \
+    && sudo apt install -y --no-install-recommends ffmpeg \
+    && sudo apt clean \
     && rm -rf /var/lib/apt/lists/*
 COPY . /app/
 WORKDIR /app/
