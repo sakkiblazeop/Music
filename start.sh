@@ -1,5 +1,3 @@
 #!/bin/bash
 
-cd Music
- 
-python3 -m InnexiaMusic
+git clone https://github.com/Team-Deadly/Music innexia && cd innexia && bash start
